@@ -1,1 +1,2 @@
-export { init as initDan } from './init'
+import DanApi from './constructor';
+export default DanApi;

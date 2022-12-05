@@ -1,4 +1,4 @@
-import { request } from "../endpoint";
+import DanApi from "../constructor";
 
 type BuyAmount = {
     value: number;
@@ -39,7 +39,11 @@ type Domain = {
 }
 
 // Search distribution network for domain
-export async function search(query: string) {
-    const { results } = await request('/dp/demand/domains', 'GET', { query });
-    return results as Domain[];
+export function dp(api: DanApi) {
+    async function search(query: string) {
+        const { results } = await api.endpoint.request('/dp/demand/domains', 'GET', { query });
+        return results as Domain[];
+    }
+
+    return { search };
 }
