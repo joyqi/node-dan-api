@@ -72,6 +72,8 @@ jobs:
         run: ${{steps.get-versions.outputs.pkg}} install
 
       - name: Test
+        env:
+          TOKEN: '${{ secrets.DAN_TOKEN }}'
         run: ${{steps.get-versions.outputs.pkg}} run test
 
       - name: Build

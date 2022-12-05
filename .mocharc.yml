@@ -1,3 +1,5 @@
 extension: ['ts', 'tsx'] # add tsx if you use react
 spec: 'src/**/*.spec.ts'
 require: 'ts-node/register'
+file:
+  - 'src/pretest.ts'

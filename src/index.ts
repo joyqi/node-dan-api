@@ -1,1 +1,1 @@
-// TODO: export your library
+export { init as initDan } from './init'

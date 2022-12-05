@@ -22,9 +22,13 @@
   },
   "devDependencies": {
     "@types/mocha": "latest",
+    "@types/node": "^18.11.10",
     "assert": "latest",
     "mocha": "latest",
     "ts-node": "latest",
     "typescript": "latest"
+  },
+  "dependencies": {
+    "axios": "^1.2.0"
   }
 }
