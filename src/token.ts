@@ -1,6 +1,6 @@
 import axios from "axios";
 import { endpointUrl } from "./endpoint";
-import { getIntegratorToken } from "./init";
+import { getIntegratorToken, getTimeOut } from "./init";
 
 type TokenResponse = {
     token: string;
@@ -18,7 +18,12 @@ export async function getAuthToken(): Promise<string> {
 
     const response = await axios.post(
         endpointUrl('/tokens'),
-        { integrator_token: getIntegratorToken() }
+        {
+            integrator_token: getIntegratorToken()
+        },
+        {
+            timeout: getTimeOut(),
+        }
     );
 
     if (response.status !== 200) {

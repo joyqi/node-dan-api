@@ -1,6 +1,6 @@
 import axios, { Method } from "axios";
 import { getAuthToken } from "./token";
-import { isSandbox } from "./init";
+import { getTimeOut, isSandbox } from "./init";
 
 const endpoints = {
     sandbox: 'https://sandbox.dan.com/api/integrator/v1',
@@ -18,6 +18,7 @@ export async function request(path: string, method: Method, data?: any) {
         method,
         url: endpointUrl(path),
         data,
+        timeout: getTimeOut(),
         headers: {
             Authorization: 'Bearer ' + (await getAuthToken())
         }

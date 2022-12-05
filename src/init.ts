@@ -2,6 +2,7 @@
 export type DanConfig = {
     token?: string;
     sandbox: boolean;
+    timeout?: number;
 };
 
 const config: DanConfig = {
@@ -25,4 +26,9 @@ export function getIntegratorToken(): string {
 // Get sandbox mode
 export function isSandbox(): boolean {
     return config.sandbox;
+}
+
+// Get timeout
+export function getTimeOut(): number {
+    return config.timeout ?? 3000;
 }
