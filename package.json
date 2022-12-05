@@ -1,20 +1,18 @@
 {
-  "name": "typescript-module-template",
+  "name": "node-dan-api",
   "keywords": [],
-  "author": "",
+  "author": "namebeta",
   "license": "",
-  "description": "",
+  "description": "Node.js client library for dan.com api.",
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "git+https://github.com/namebeta/node-dan-api.git"
   },
-  "homepage": "",
+  "homepage": "https://github.com/namebeta/node-dan-api#readme",
   "bugs": {
-    "url": ""
+    "url": "https://github.com/namebeta/node-dan-api/issues"
   },
-
   "version": "0.0.1",
-
   "main": "lib/index.js",
   "module": "lib/index.js",
   "types": "lib/index.d.ts",
