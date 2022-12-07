@@ -38,11 +38,15 @@ type Domain = {
     }
 }
 
+type Item = {
+    domain: Domain;
+}
+
 // Search distribution network for domain
 export function dp(api: DanApi) {
     async function search(query: string) {
         const { results } = await api.endpoint.request('/dp/demand/domains', 'GET', { query });
-        return results as Domain[];
+        return results as Item[];
     }
 
     return { search };
