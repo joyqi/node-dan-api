@@ -85,7 +85,7 @@ jobs:
           ${{steps.get-versions.outputs.pkg}} run build
           tmp=$(mktemp)
           jq --arg version "${{ github.event.release.tag_name }}" '.version = $version' package.json > $tmp
-          mv $tmp package.json
+          jq 'del(.type)' $tmp > package.json
           echo version=$(jq -r '.version' package.json) >> $GITHUB_OUTPUT
       
       - name: Publish
