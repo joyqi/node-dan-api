@@ -2,3 +2,5 @@ extension: ['ts', 'tsx'] # add tsx if you use react
 spec: 'src/**/*.spec.ts'
 require: 'ts-node/register'
 timeout: '3000'
+experimental-specifier-resolution: 'node'
+loader: 'ts-node/esm'
