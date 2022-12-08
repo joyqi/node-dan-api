@@ -1,21 +1,8 @@
 {
+  "extends": "./tsconfig.base.json",
   "compilerOptions": {
-    "target": "ESNext",
-    "module": "ESNext",
-    "rootDir": "src",
-    "moduleResolution": "node",
-    "baseUrl": ".",
-    "paths": {
-      "*": ["./*"]
-    },
-    "declaration": true,
-    "sourceMap": true,
-    "outDir": "lib/mjs",
-    "removeComments": true,
-    "declarationDir": "lib/types",
-    "strict": true,
-    "esModuleInterop": true,
-    "skipLibCheck": true
-  },
-  "exclude": ["node_modules", "**/*.spec.ts", "lib"]
+    "module": "CommonJS",
+    "target": "ES2019",
+    "outDir": "lib/cjs"
+  }
 }
