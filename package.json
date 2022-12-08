@@ -26,10 +26,10 @@
   "types": "lib/types/index.d.ts",
   "scripts": {
     "clear": "rm -rf ./lib",
-    "patch:esm-js": "npx tsc-esm-fix --tsconfig tsconfig.json",
+    "patch:esm-js": "npx tsc-esm-fix --tsconfig=tsconfig.mjs.json",
     "patch:esm-type": "echo '{ \"type\": \"module\" }' >> lib/mjs/package.json",
-    "build:esm": "npx tsc && npm run patch:esm-js && npm run patch:esm-type",
-    "build:cjs": "npx tsc -p tsconfig.cjs.json",
+    "build:esm": "npx tsc -p tsconfig.mjs.json && npm run patch:esm-js && npm run patch:esm-type",
+    "build:cjs": "npx tsc",
     "build": "npm run clear && npm run build:esm && npm run build:cjs",
     "test": "npx mocha"
   },
