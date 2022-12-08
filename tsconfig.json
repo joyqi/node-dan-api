@@ -13,7 +13,6 @@
     "outDir": "lib/mjs",
     "removeComments": true,
     "declarationDir": "lib/types",
-    "esModuleInterop": true,
     "strict": true,
     "skipLibCheck": true
   },
