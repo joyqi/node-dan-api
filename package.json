@@ -26,14 +26,16 @@
   "types": "lib/types/index.d.ts",
   "scripts": {
     "clear": "rm -rf ./lib",
-    "build:esm": "npx tsc && npx tsc-esm-fix --tsconfig tsconfig.json",
+    "patch:esm-js": "npx tsc-esm-fix --tsconfig tsconfig.json",
+    "patch:esm-type": "echo '{ \"type\": \"module\" }' >> lib/mjs/package.json",
+    "build:esm": "npx tsc && npm run patch:esm-js && npm run patch:esm-type",
     "build:cjs": "npx tsc -p tsconfig.cjs.json",
     "build": "npm run clear && npm run build:esm && npm run build:cjs",
     "test": "npx mocha"
   },
   "devDependencies": {
     "@types/mocha": "latest",
-    "@types/node": "^18.11.10",
+    "@types/node": "^18.11.11",
     "assert": "latest",
     "mocha": "latest",
     "ts-node": "latest",
@@ -45,6 +47,6 @@
     "pnpm": ">=7.0.0"
   },
   "dependencies": {
-    "axios": "1.1.x"
+    "axios": "1.1.3"
   }
 }
